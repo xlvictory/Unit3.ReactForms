@@ -23,6 +23,11 @@ export default function SignUpForm({ setToken }) {
         } catch(error) {
             setError(error.message);
         }
+        if(username.length < 5) {
+            setError("Username has to be at least 5 characters", error);
+        } if(password.length < 8){
+            setError("Password needs to be at least 8 characters", error);
+        }
     }
 
     return (
